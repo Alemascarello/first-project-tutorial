@@ -1,0 +1,19 @@
+<div class="quadro">
+  <h2>TODO LIST</h2>
+
+  <div>
+    <input type="text" [(ngModel)]="valorInput" />
+    <button (click)="adicionar()">Adicionar</button>
+  </div>
+
+  <ul>
+    @for (item of listaDeItens; track $index) {
+
+    <li>
+      {{ item }}
+      <button (click)="excluirItem($index)">excluir</button>
+    </li>
+
+    }
+  </ul>
+</div>
