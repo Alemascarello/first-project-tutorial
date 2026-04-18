@@ -1,11 +1,48 @@
-import { Component } from '@angular/core';
-import { KaduTodoListComponent } from './kadu-todo-list/kadu-todo-list.component';
+import { Component, OnInit } from '@angular/core';
+
+interface livro {
+  nome: string;
+  autor: string;
+  isbn: number;
+
+  asdasdfas;
+}
+
+interface pessoa {
+  nome: string;
+  idade: number;
+}
+
+interface biblioteca {
+  livros: livro[];
+  clientes: pessoa[];
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [KaduTodoListComponent],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  biblioteca1: biblioteca = {
+    clientes: [
+      {
+        idade: 1,
+        nome: 'teste',
+      },
+    ],
+    livros: [
+      {
+        nome: 'dom casmurro',
+        autor: 'machado assis',
+        isbn: 12312412312 - 1,
+      },
+    ],
+  };
+
+  ngOnInit() {
+    console.log(this.biblioteca1);
+  }
+}
