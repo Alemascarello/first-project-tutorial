@@ -4,6 +4,8 @@ interface livro {
   nome: string;
   autor: string;
   isbn: number;
+
+  asdasdfas;
 }
 
 interface pessoa {
