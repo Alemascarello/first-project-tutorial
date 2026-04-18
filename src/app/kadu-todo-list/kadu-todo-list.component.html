@@ -1,0 +1,24 @@
+<div class="quadro">
+  <div class="container-app">
+    <h2 class="titulo">✔️ Minhas tarefas</h2>
+
+    <div>
+      <input
+        (keydown.enter)="adicionar()"
+        type="text"
+        [(ngModel)]="valorInput"
+      />
+      <button class="buttonadd" (click)="adicionar()">Adicionar</button>
+    </div>
+
+    <ul>
+      @for (item of listaDeItens; track $index) {
+
+      <li>
+        {{ item }}
+        <button (click)="excluirItem($index)">excluir</button>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
