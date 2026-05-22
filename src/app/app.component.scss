@@ -1,15 +1,42 @@
-.center {
-  height: 80vh;
-  width: 80vw;
+.app-header {
   display: flex;
-  flex-direction: column;
-  margin-left: 10vw;
-  align-content: center;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--app-surface);
+  border-bottom: 2px solid var(--app-accent);
 }
 
-h1 {
-  margin-bottom: 20px;
+.app-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+}
+
+.app-header__accent {
+  width: 4px;
+  height: 1.5rem;
+  background-color: var(--app-accent);
+  border-radius: 2px;
+}
+
+.app-header__theme {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  i {
+    color: var(--app-accent);
+    font-size: 1rem;
+  }
+}
+
+.app-main {
+  padding: 1.5rem;
 }

@@ -1,46 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
-interface livro {
-  nome: string;
-  autor: string;
-  isbn: number;
-}
-
-interface pessoa {
-  nome: string;
-  idade: number;
-}
-
-interface biblioteca {
-  livros: livro[];
-  clientes: pessoa[];
-}
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { ToggleSwitchModule } from 'primeng/toggleswitch';
+import { PessoasCrudComponent } from './pessoas/pessoas-crud.component';
+import { ThemeService } from './theme/theme.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [],
+  imports: [PessoasCrudComponent, ButtonModule, ToggleSwitchModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  biblioteca1: biblioteca = {
-    clientes: [
-      {
-        idade: 1,
-        nome: 'teste',
-      },
-    ],
-    livros: [
-      {
-        nome: 'dom casmurro',
-        autor: 'machado assis',
-        isbn: 12312412312 - 1,
-      },
-    ],
-  };
+export class AppComponent {
+  private readonly themeService = inject(ThemeService);
 
-  ngOnInit() {
-    console.log(this.biblioteca1);
+  readonly themeMode = this.themeService.mode;
+
+  onThemeToggle(isDark: boolean): void {
+    this.themeService.setMode(isDark ? 'dark' : 'light');
   }
 }

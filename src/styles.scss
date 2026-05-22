@@ -1,4 +1,36 @@
-* {
-  margin: 0;
-  padding: 0;
+@layer app-styles {
+  :root {
+    --asiimov-orange: #df7116;
+    --asiimov-gray: #eeeeee;
+    --asiimov-white: #ffffff;
+    --asiimov-black: #000000;
+
+    --app-bg: var(--asiimov-white);
+    --app-surface: var(--asiimov-gray);
+    --app-text: var(--asiimov-black);
+    --app-accent: var(--asiimov-orange);
+  }
+
+  html.app-dark {
+    --app-bg: #0a0a0a;
+    --app-surface: #141414;
+    --app-text: var(--asiimov-gray);
+    --app-accent: var(--asiimov-orange);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--app-bg);
+    color: var(--app-text);
+    min-height: 100vh;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
 }

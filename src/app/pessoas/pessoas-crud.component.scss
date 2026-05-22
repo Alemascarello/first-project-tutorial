@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+.pessoas-toolbar__titulo {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.pessoas-tabela__filtro {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pessoas-acoes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pessoas-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}

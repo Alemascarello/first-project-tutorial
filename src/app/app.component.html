@@ -1,0 +1,19 @@
+<header class="app-header">
+  <div class="app-header__brand">
+    <span class="app-header__accent"></span>
+    <h1>First Project</h1>
+  </div>
+
+  <div class="app-header__theme">
+    <i class="pi pi-sun"></i>
+    <p-toggleswitch
+      [ngModel]="themeMode() === 'dark'"
+      (ngModelChange)="onThemeToggle($event)"
+    />
+    <i class="pi pi-moon"></i>
+  </div>
+</header>
+
+<main class="app-main">
+  <app-pessoas-crud></app-pessoas-crud>
+</main>
